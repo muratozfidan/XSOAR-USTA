@@ -1,0 +1,824 @@
+commonfields:
+  id: USTA
+  version: -1
+vcShouldKeepItemLegacyProdMachine: false
+name: USTA
+display: USTA
+category: Data Enrichment & Threat Intelligence
+image: data:image/png;base64,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
+description: USTA is Cyber Threat Intelligence Company
+detaileddescription: 'For more details: https://www.siberistihbarat.com/'
+configuration:
+- display: Server URL (e.g. https://usta.prodaft.com/api/)
+  name: url
+  defaultvalue: https://usta.prodaft.com
+  type: 0
+  required: true
+- display: API Key
+  name: apikey
+  type: 4
+  required: true
+  additionalinfo: 'You can reach out your access token : https://usta.prodaft.com/#/api-documents'
+- display: Trust any certificate (not secure)
+  name: insecure
+  defaultvalue: "false"
+  type: 8
+  required: false
+- display: Use system proxy settings
+  name: proxy
+  defaultvalue: "false"
+  type: 8
+  required: false
+script:
+  script: |-
+    import json
+    import os
+    import traceback
+    import requests
+    import hashlib
+    import datetime
+
+    # disable insecure warnings
+    requests.packages.urllib3.disable_warnings()
+
+    ''' GLOBAL VARIABLES'''
+    VERIFY_SSL = not demisto.params().get('insecure', False)
+
+    DATE_FORMAT = '%Y-%m-%dT%H:%M:%SZ'
+    if not demisto.params().get('proxy', False):
+        del os.environ['HTTP_PROXY']
+        del os.environ['HTTPS_PROXY']
+        del os.environ['http_proxy']
+        del os.environ['https_proxy']
+
+
+    def test_module() -> str:
+        """Tests API connectivity and authentication'
+        Returning 'ok' indicates that the integration works like it is supposed to.
+        Connection to the service is successful.
+        Raises exceptions if something goes wrong.
+        :return: 'ok' if test passed, anything else will fail the test.
+        :rtype: ``str``
+        """
+
+        try:
+            url = demisto.params().get('url')[:-1] if str(demisto.params().get('url')).endswith('/') \
+                else demisto.params().get('url')
+            CREDENTIALS = demisto.params().get('apikey')
+            # AUTH_HEADERS = {'Content-Type': 'application/json'}
+
+            params = "TOKEN " + CREDENTIALS
+            headers = {"Authorization": params,
+            "Content-Type": "application/json"
+            }
+
+            base_url = urljoin(url, '/api')
+            endpoint = "/threat-stream/malicious-urls?format=json"
+
+            url = urljoin(base_url, endpoint)
+            req = requests.get(url, headers=headers, verify=VERIFY_SSL)
+            status = req.status_code
+            if status != 200:
+                return str(status)
+        except Exception as e:
+            if ('Forbidden' in str(e)):
+                return 'Authorization Error: make sure API Key is correctly set'
+            else:
+                raise e
+        return 'ok'
+
+
+    class Client(BaseClient):
+        """Client class to interact with the service API
+
+        This Client implements API calls, and does not contain any SOAR logic.
+        Should only do requests and return data.
+        It inherits from BaseClient defined in CommonServer Python.
+        Most calls use _http_request() that handles proxy, SSL verification, etc.
+        For this HelloWorld implementation, no special attributes defined
+        """
+
+        def get_malicious_url(self, param: dict) -> Dict[str, Any]:
+            """Gets the Malicious url using the '/threat-stream/malicious-urls' API endpoint
+
+            :return: dict containing the Malicious URL details as returned from the API
+            :rtype: ``Dict[str, Any]``
+            """
+            return self._http_request(
+                method='GET',
+                url_suffix='/threat-stream/malicious-urls',
+                params=param
+            )
+
+        def get_malware_hash(self, param: dict) -> Dict[str, Any]:
+            """Gets the Malicious hashs using the '/threat-stream/malware-hashs' API endpoint
+
+            :return: dict containing the Malicious Hash details as returned from the API
+            :rtype: ``Dict[str, Any]``
+            """
+            return self._http_request(
+                method='GET',
+                url_suffix='/threat-stream/malware-hashs',
+                params=param
+            )
+
+        def get_phishing_sites(self, param: dict) -> Dict[str, Any]:
+            """Available for all Phishing Sites created for your company that using the '/threat-stream/phishing-sites' API endpoint
+
+            :return: dict containing the Phishing Site details as returned from the API
+            :rtype: ``Dict[str, Any]``
+            """
+            return self._http_request(
+                method='GET',
+                url_suffix='/threat-stream/phishing-sites',
+                params=param
+            )
+
+        def get_identity_leaks(self, param: dict) -> Dict[str, Any]:
+            """Gets the Leaked Accounts related your company using the '/threat-stream/identity-leaks' API endpoint
+
+            :return: dict containing the Account details as returned from the API
+            :rtype: ``Dict[str, Any]``
+            """
+            return self._http_request(
+                method='GET',
+                url_suffix='/threat-stream/identity-leaks',
+                params=param
+            )
+
+        def get_stolen_client_accounts(self, param: dict) -> Dict[str, Any]:
+            """Gets the Stolen Client Accounts related any service using the '/threat-stream/stolen-client-accounts' API endpoint
+
+            :return: dict containing the Accounts details as returned from the API
+            :rtype: ``Dict[str, Any]``
+            """
+            return self._http_request(
+                method='GET',
+                url_suffix='/threat-stream/stolen-client-accounts',
+                params=param
+            )
+
+        def get_domain(self, param: dict) -> Dict[str, Any]:
+            """Gets the Domain details using the '/threat-stream/domain' API endpoint
+
+            :return: dict containing the Domain details as returned from the API
+            :rtype: ``Dict[str, Any]``
+            """
+
+            return self._http_request(
+                method='POST',
+                url_suffix='/threat-stream/domain',
+                json_data=param
+            )
+
+        def get_ip_address(self, param: dict) -> Dict[str, Any]:
+            """Gets the IP details using the '/threat-stream/ip-address' API endpoint
+
+            :return: dict containing the IP details as returned from the API
+            :rtype: ``Dict[str, Any]``
+            """
+
+            return self._http_request(
+                method='POST',
+                url_suffix='/threat-stream/ip-address',
+                json_data=param
+            )
+
+
+    def search_malicious_urls(client: Client, args: Dict[str, Any]) -> CommandResults:
+        """Gets the Malicious url using the '/threat-stream/malicious-urls' API endpoint
+
+            :type format: ``str``
+            :param - format: It determines the data type of the response that will return via API.
+            :Available values : json, stix, stix2, txt. Default value : json
+
+            :type url: ``str``
+            :param - url: For filtering with URL
+
+            :type is_domain: ``boolean``
+            :param - is_domain: Provides filtering for data with or without domain names
+
+            :type url_type: ``str``
+            :param - url_type: For filtering with URL Type.
+            :Available values : Phishing, C2, Downloader
+
+            :type tag: ``str``
+            :param - tag: For filtering with tags
+
+            :type start: ``str``
+            :param - start: Starting parameter for analysis
+
+            :type end: ``str``
+            :param - end: End parameter for analysis
+            """
+        url = demisto.args().get('url')
+        is_domain = demisto.args().get('is_domain')
+        url_type = demisto.args().get('url_type')
+        tag = demisto.args().get('tag')
+        start = demisto.args().get('start')
+        end = demisto.args().get('end')
+        formatType = demisto.args().get('format')
+
+        param = {}
+
+        if start:
+            startDate = timeToEpoch(start)
+        else:
+            startDate = start
+
+        print(startDate)
+
+        if end:
+            endDate = timeToEpoch(end)
+        else:
+            endDate = end
+
+        param = {
+            'url':url,
+            'is_domain':is_domain,
+            'url_type':url_type,
+            'tag':tag,
+            'start':startDate,
+            'end':endDate,
+            'format':formatType
+        }
+
+        maliciousURL = client.get_malicious_url(param=param)
+
+        readable_output = tableToMarkdown('Malicious URL', maliciousURL)
+
+        return CommandResults(
+            readable_output=readable_output,
+            outputs_prefix='USTA.Malicious_URL',
+            outputs_key_field='url',
+            outputs=maliciousURL
+        )
+
+
+    def search_malware_hashs(client: Client, args: Dict[str, Any]) -> CommandResults:
+        """Gets the Malicious hashs using the '/threat-stream/malware-hashs' API endpoint
+
+            :type format: ``str``
+            :param - format: It determines the data type of the response that will return via API.
+            :Available values : json, stix, stix2, txt. Default value : json
+
+            :type md5: ``str``
+            :param - md5: For filtering with md5
+
+            :type sha1: ``boolean``
+            :param - sha1: For filtering with sha1.
+
+            :type tag: ``str``
+            :param - tag: For filtering with tags
+
+            :type start: ``str``
+            :param - start: Starting parameter for analysis
+
+            :type end: ``str``
+            :param - end: End parameter for analysis
+            """
+        md5 = demisto.args().get('md5')
+        sha1 = demisto.args().get('sha1')
+        tag = demisto.args().get('tag')
+        start = demisto.args().get('start')
+        end = demisto.args().get('end')
+        formatType = demisto.args().get('format')
+
+        if start:
+            startDate = timeToEpoch(start)
+        else:
+            startDate = start
+
+        if end:
+            endDate = timeToEpoch(end)
+        else:
+            endDate = end
+
+        param = {
+            'md5':md5,
+            'sha1':sha1,
+            'tag':tag,
+            'start':startDate,
+            'end':endDate,
+            'format':formatType
+        }
+
+        malwareHash = client.get_malware_hash(param=param)
+
+        readable_output = tableToMarkdown('Malware Hashs', malwareHash)
+
+        return CommandResults(
+            readable_output=readable_output,
+            outputs_prefix='USTA.Malware_Hash',
+            outputs_key_field='md5',
+            outputs=malwareHash
+        )
+
+
+    def search_phishing_sites(client: Client, args: Dict[str, Any]) -> CommandResults:
+        """Available for all Phishing Sites created for your company that using the '/threat-stream/phishing-sites' API endpoint
+
+            :type status: ``str``
+            :param - status: For filtering with status
+            :Available values : open, close, in_progress, out_of_scope, passive
+
+            :type source: ``str``
+            :param - source: For filtering with source
+
+            :type page: ``str``
+            :param - page: For pagination
+            """
+        status = demisto.args().get('status')
+        source = demisto.args().get('source')
+        page = demisto.args().get('page')
+
+        param = {
+            'status':status,
+            'source':source,
+            'page':page
+        }
+
+        phishingSites = client.get_phishing_sites(param=param)
+
+        readable_output = tableToMarkdown('Phishing Sites', phishingSites)
+
+        return CommandResults(
+            readable_output=readable_output,
+            outputs_prefix='USTA.Phishing_Sites',
+            outputs_key_field='results',
+            outputs=phishingSites
+        )
+
+
+    def search_identity_leaks(client: Client, args: Dict[str, Any]) -> CommandResults:
+        """Gets the Leaked Accounts related your company using the '/threat-stream/identity-leaks' API endpoint
+
+            :type start: ``str``
+            :param - start: Starting parameter for analysis
+
+            :type end: ``str``
+            :param - end: End parameter for analysis
+            """
+        start = demisto.args().get('start')
+        end = demisto.args().get('end')
+
+        if start:
+            startDate = timeToEpoch(start)
+        else:
+            startDate = start
+
+        if end:
+            endDate = timeToEpoch(end)
+        else:
+            endDate = end
+
+        param = {
+            'start':startDate,
+            'end':endDate
+        }
+
+        identityLeaks = client.get_identity_leaks(param=param)
+
+        readable_output = tableToMarkdown('Identity Leaks', identityLeaks)
+
+        return CommandResults(
+            readable_output=readable_output,
+            outputs_prefix='USTA.Identity_Leaks',
+            outputs_key_field='signature',
+            outputs=identityLeaks
+        )
+
+
+    def search_stolen_client_accounts(client: Client, args: Dict[str, Any]) -> CommandResults:
+        """Gets the Stolen Client Accounts related any service using the '/threat-stream/stolen-client-accounts' API endpoint
+
+            :type username: ``str``
+            :param - username: For filtering with username
+
+            :type password: ``boolean``
+            :param - password: For filtering with password
+
+            :type source: ``str``
+            :param - source: For filtering with source
+
+            :type start: ``str``
+            :param - start: Starting parameter for analysis
+
+            :type end: ``str``
+            :param - end: End parameter for analysis
+            """
+        username = demisto.args().get('username')
+        password = demisto.args().get('password')
+        source = demisto.args().get('source')
+        start = demisto.args().get('start')
+        end = demisto.args().get('end')
+
+        if start:
+            startDate = timeToEpoch(start)
+        else:
+            startDate = start
+
+        if end:
+            endDate = timeToEpoch(end)
+        else:
+            endDate = end
+
+        param = {
+            'username':username,
+            'password':password,
+            'source':source,
+            'start':startDate,
+            'end':endDate
+        }
+
+        stolenClientAccounts = client.get_stolen_client_accounts(param=param)
+
+        readable_output = tableToMarkdown('Stolen Client Accounts', stolenClientAccounts)
+
+        return CommandResults(
+            readable_output=readable_output,
+            outputs_prefix='USTA.Stolen_Client_Accounts',
+            outputs_key_field='username',
+            outputs=stolenClientAccounts
+        )
+
+
+    def search_domain(client: Client, args: Dict[str, Any]) -> CommandResults:
+
+        domain = demisto.args().get('domain')
+
+        param = {
+            'domain':domain
+        }
+
+        maliciousDomain = client.get_domain(param=param)
+
+        readable_output = tableToMarkdown('Malicious Domain', maliciousDomain)
+
+        return CommandResults(
+            readable_output=readable_output,
+            outputs_prefix='USTA.Malicious_Domain',
+            outputs_key_field='domain',
+            outputs=maliciousDomain
+        )
+
+
+    def search_ip_address(client: Client, args: Dict[str, Any]) -> CommandResults:
+
+        ip_address = demisto.args().get('ip_address')
+
+        param = {
+            'ip_address':ip_address
+        }
+
+        maliciousIPAddress = client.get_ip_address(param=param)
+
+        readable_output = tableToMarkdown('Malicious IP Address', maliciousIPAddress)
+
+        return CommandResults(
+            readable_output=readable_output,
+            outputs_prefix='USTA.Malicious_IP_Address',
+            outputs_key_field='ip_address',
+            outputs=maliciousIPAddress
+        )
+
+
+    def send_referrer_url() -> CommandResults:
+
+        url = demisto.params().get('url')[:-1] if str(demisto.params().get('url')).endswith('/') \
+            else demisto.params().get('url')
+        CREDENTIALS = demisto.params().get('apikey')
+        # AUTH_HEADERS = {'Content-Type': 'application/json'}
+
+        params = "TOKEN " + CREDENTIALS
+        headers = {"Authorization": params,
+        "Content-Type": "application/json"
+        }
+
+        base_url = urljoin(url, '/api')
+        endpoint = "/threat-stream/referrers"
+
+        url = urljoin(base_url, endpoint)
+
+        addresses = [demisto.args().get('address')]
+
+        data = []
+        for address in addresses:
+            addressParam = {
+                'address':address
+            }
+            data.append(addressParam)
+
+        req = requests.post(url, headers=headers, data=json.dumps(data), verify=VERIFY_SSL)
+        referredResult = json.loads(req.content)
+
+        readable_output = tableToMarkdown('Referred Result', referredResult)
+
+        return CommandResults(
+            readable_output=readable_output,
+            outputs=referredResult
+        )
+
+
+    def search_specific_identity_leaks() -> CommandResults:
+
+        url = demisto.params().get('url')[:-1] if str(demisto.params().get('url')).endswith('/') \
+            else demisto.params().get('url')
+        CREDENTIALS = demisto.params().get('apikey')
+        # AUTH_HEADERS = {'Content-Type': 'application/json'}
+
+        params = "TOKEN " + CREDENTIALS
+        headers = {"Authorization": params,
+        "Content-Type": "application/json"
+        }
+
+        base_url = urljoin(url, '/api')
+        endpoint = "/threat-stream/identity-leaks"
+
+        url = urljoin(base_url, endpoint)
+
+        identities = demisto.args().get('identity_number')
+        identityList = identities.split(",")
+
+        hashedIdentities = encodeData(identityList)
+
+        mappingHashIdentity = []
+        for i in range(len(identityList)):
+            mappingDict = {
+                'Identity':identityList[i],
+                'Identity Hash':hashedIdentities[i]
+            }
+            mappingHashIdentity.append(mappingDict)
+
+        data = {
+            'signatures':hashedIdentities
+        }
+
+        req = requests.patch(url, headers=headers, data=json.dumps(data), verify=VERIFY_SSL)
+        identityLeaks = json.loads(req.content)
+
+        readable_output = tableToMarkdown('Identity Leaks', identityLeaks)
+        readable_output += tableToMarkdown('Identity Hash Mapping', mappingHashIdentity)
+
+        return CommandResults(
+            readable_output=readable_output,
+            outputs=identityLeaks
+        )
+
+
+    def close_incident() -> CommandResults:
+
+        url = demisto.params().get('url')[:-1] if str(demisto.params().get('url')).endswith('/') \
+            else demisto.params().get('url')
+        CREDENTIALS = demisto.params().get('apikey')
+        # AUTH_HEADERS = {'Content-Type': 'application/json'}
+
+        params = "TOKEN " + CREDENTIALS
+        headers = {"Authorization": params,
+        "Content-Type": "application/json"
+        }
+
+        base_url = urljoin(url, '/api')
+        endpoint = "/threat-stream/close-ticket"
+
+        url = urljoin(base_url, endpoint)
+
+        inc_id = demisto.args().get('id')
+        data = {
+            'id':inc_id
+        }
+
+        req = requests.patch(url, headers=headers, data=json.dumps(data), verify=VERIFY_SSL)
+        closedIncident = json.loads(req.content)
+
+        readable_output = tableToMarkdown('Close Incident', closedIncident)
+
+        return CommandResults(
+            readable_output=readable_output,
+            outputs=closedIncident
+        )
+
+
+    def encodeData(identities: list)-> list:
+        hashedList = []
+        for identity in identities:
+            hashedIdentity = hashlib.sha256((hashlib.md5(identity.encode())).hexdigest().encode()).hexdigest()
+            hashedList.append(hashedIdentity)
+        return hashedList
+
+
+    def timeToEpoch(time: str)-> str:
+        timeParameterList = time.split("-")
+        if len(timeParameterList) != 5:
+            error_message = "Time paremeter is wrong"
+            return_error(error_message)
+        else:
+            epochTime = datetime.datetime(int(timeParameterList[0]),int(timeParameterList[1]),int(timeParameterList[2]),
+            int(timeParameterList[3]),int(timeParameterList[4])).strftime('%s')
+            return epochTime
+
+
+    def main() -> None:
+        """main function, parses params and runs command functions
+        :return:
+        :rtype:
+        """
+        CREDENTIALS = demisto.params().get('apikey')
+        # AUTH_HEADERS = {'Content-Type': 'application/json'}
+
+        # get the service API url
+        base_url = urljoin(demisto.params()['url'], '/api')
+
+        # if your Client class inherits from BaseClient, SSL verification is
+        # handled out of the box by it, just pass ``verify_certificate`` to
+        # the Client constructor
+        verify_certificate = not demisto.params().get('insecure', False)
+
+        # if your Client class inherits from BaseClient, system proxy is handled
+        # out of the box by it, just pass ``proxy`` to the Client constructor
+        proxy = demisto.params().get('proxy', False)
+
+        ''' EXECUTION '''
+        # LOG('command is %s' % (demisto.command(), ))
+        demisto.debug(f'Command being called is {demisto.command()}')
+        try:
+
+            params = "TOKEN " + CREDENTIALS
+            headers = {'Authorization': params,
+            'Content-Type': 'application/json'
+            }
+
+            client = Client(
+                base_url=base_url,
+                verify=verify_certificate,
+                headers=headers,
+                proxy=proxy)
+
+            LOG('Command being called is {command}'.format(command=demisto.command()))
+            if demisto.command() == 'test-module':
+                demisto.results(test_module())
+            elif demisto.command() == 'usta-get-malicious-urls':
+                return_results(search_malicious_urls(client, demisto.args()))
+            elif demisto.command() == 'usta-get-malware-hashs':
+                return_results(search_malware_hashs(client, demisto.args()))
+            elif demisto.command() == 'usta-get-phishing-sites':
+                return_results(search_phishing_sites(client, demisto.args()))
+            elif demisto.command() == 'usta-get-identity-leaks':
+                return_results(search_identity_leaks(client, demisto.args()))
+            elif demisto.command() == 'usta-get-stolen-client-accounts':
+                return_results(search_stolen_client_accounts(client, demisto.args()))
+            elif demisto.command() == 'usta-get-domain':
+                return_results(search_domain(client, demisto.args()))
+            elif demisto.command() == 'usta-get-ip-address':
+                return_results(search_ip_address(client, demisto.args()))
+            elif demisto.command() == 'usta-send-referrer-url':
+                return_results(send_referrer_url())
+            elif demisto.command() == 'usta-search-specific-identity-leaks':
+                return_results(search_specific_identity_leaks())
+            elif demisto.command() == 'usta-close-incident':
+                return_results(close_incident())
+
+        # Log exceptions and return errors
+        except Exception as e:
+            demisto.error(traceback.format_exc())  # print the traceback
+            return_error(f'Failed to execute {demisto.command()} command.\nError:\n{str(e)}')
+
+
+    if __name__ in ('__main__', '__builtin__', 'builtins'):
+        main()
+  type: python
+  commands:
+  - name: usta-get-malicious-urls
+    arguments:
+    - name: format
+      auto: PREDEFINED
+      predefined:
+      - json
+      - stix
+      - stix2
+      - txt
+      description: Format type of the returned result
+      defaultValue: json
+    - name: url
+      description: Filtering by URL Address
+    - name: is_domain
+      default: true
+      auto: PREDEFINED
+      predefined:
+      - "true"
+      - "false"
+      description: You can search only those with or without domain name registration
+      defaultValue: "true"
+    - name: url_type
+      description: Filtering by malicious type
+    - name: tag
+      description: 'Filtering by tags. Example: tag=Keitaro'
+    - name: start
+      description: Starting date
+    - name: end
+      description: End Date
+    description: You can get malicious URLs with this command
+  - name: usta-get-malware-hashs
+    arguments:
+    - name: format
+      auto: PREDEFINED
+      predefined:
+      - json
+      - stix
+      - stix2
+      description: Format type of the returned result
+      defaultValue: json
+    - name: md5
+      description: Filtering by md5
+    - name: sha1
+      description: Filtering by sha1
+    - name: tag
+      description: 'Filtering by tags. Example: tag=Keitaro'
+    - name: start
+      description: Starting Date
+    - name: end
+      description: End Date
+    description: You can get malware hashs with this command
+  - name: usta-get-phishing-sites
+    arguments:
+    - name: status
+      auto: PREDEFINED
+      predefined:
+      - open
+      - close
+      - in_progress
+      - out_of_scope
+      - passive
+      description: Filtering by status
+    - name: source
+      description: Filtering by source(URL)
+    - name: page
+      description: Paginiation
+    description: You can get phishing sites with this command
+  - name: usta-get-identity-leaks
+    arguments:
+    - name: start
+      description: Staring Date
+    - name: end
+      description: End Date
+    description: With the Identity Leak API, you can access the hashed version of
+      the credentials added to the platform.SHA256(MD5(Identity_Number))
+  - name: usta-get-stolen-client-accounts
+    arguments:
+    - name: username
+      description: Filtering by username
+    - name: password
+      description: Filtering by password
+    - name: source
+      auto: PREDEFINED
+      predefined:
+      - malware
+      - phishing_site
+      - data_leak
+      - clients
+      description: 'It allows to filter the stolen customer accounts detected according
+        to the source.Available values : malware, phishing_site, data_leak, clients'
+    - name: start
+      description: Starting Date
+    - name: end
+      description: End Date
+    description: You can access stolen customer accounts via Stolen-Client-accounts
+      API.
+  - name: usta-get-domain
+    arguments:
+    - name: domain
+      required: true
+      description: Search with domain name
+    description: If you want to get more detailed information about malicious domain
+      names, you can use this command.
+  - name: usta-get-ip-address
+    arguments:
+    - name: ip_address
+      description: Search with IP Address
+    description: If you want to get more detailed information about specific IP Address,
+      you can use this command.
+  - name: usta-send-referrer-url
+    arguments:
+    - name: address
+      required: true
+      description: 'URL Value. Example: http://www.google3.com'
+    description: You can search about the accuracy of the urls referring to your company's
+      websites.
+  - name: usta-search-specific-identity-leaks
+    arguments:
+    - name: identity_number
+      required: true
+      description: 'Search with this identity number. You can search all identity
+        number with "," '
+    description: 'With this command, you can search specific identity number that
+      hashed in leaks '
+  - name: usta-close-incident
+    arguments:
+    - name: id
+      required: true
+      description: Incident ID
+    description: You can close the notifications in the status of "In Progress" or
+      "Open", which are currently opened to your institution, via API.
+  dockerimage: demisto/python3:3.8.3.9324
+  runonce: false
+  subtype: python3
